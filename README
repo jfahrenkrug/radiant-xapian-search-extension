@@ -1,0 +1,23 @@
+= Sphinx Search
+
+Adds ThinkingSphinx [http://ts.freelancing-gods.com/] support to Radiant.
+
+== Usage
+
+You'll need the ThinkingSphinx plugin installed. You'll probably want to use
+a recent revision -- versions of TS prior to July 2008 may not be capable of
+indexing the complete content of every page.
+
+By default, the first 8kB of any page's concatenated page parts will be 
+indexed. You can change this in page_extensions.rb if that's not enough 
+space, or if you wish to reduce it in order to keep your indexes lean.
+
+The Page index is defined for you. Pages will be indexed on title and content,
+with a field boost applied to title. Attributes are added to the index for 
+status_id and updated_at. An additional column is added to the Pages table 
+containing a 'searchable' boolean; toggle this on/off from within the page 
+edit view to control which pages appear in your search results.
+
+Remember to call Page.search with +:conditions => {:searchable => 1}+ as this
+filter is not set by default. Otherwise, searching works as described in the 
+Thinking Sphinx documentation.

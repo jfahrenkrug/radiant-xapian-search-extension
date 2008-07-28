@@ -1,0 +1,9 @@
+%tr
+  %td.label Search
+  %td.field{:style => 'text-align: center'}
+    %label
+      = radio_button :page, :searchable, true
+      Searchable
+    %label
+      = radio_button :page, :searchable, false
+      Invisible to Search
