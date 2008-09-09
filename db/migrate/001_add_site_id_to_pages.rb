@@ -7,7 +7,7 @@ class AddSiteIdToPages < ActiveRecord::Migration
 
   def self.down
     remove_column :pages, :delta
-    remove_column :pages, :searchable
     remove_index  :pages, :searchable
+    remove_column :pages, :searchable
   end
 end
