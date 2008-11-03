@@ -1,4 +1,4 @@
-class AddSiteIdToPages < ActiveRecord::Migration
+class AddSphinxColumnsToPages < ActiveRecord::Migration
   def self.up
     add_column :pages, :searchable, :boolean, :default => true
     add_index  :pages, :searchable
