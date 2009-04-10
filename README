@@ -4,9 +4,9 @@ Adds ThinkingSphinx [http://ts.freelancing-gods.com/] support to Radiant.
 
 == Usage
 
-You'll need to manually install the ThinkingSphinx plugin. If you're using
-MySQL, this extension requires Thinking Sphinx revision 74a529c7 (Nov. 1 '08)
-or later due to some quirky database behavior.
+After installation, you'll need to load the Thinking Sphinx submodule via:
+$ git submodule init
+$ git submodule update
 
 By default, only the first 8kB of any page's content will be indexed. You can 
 change this in page_extensions.rb if that's not enough space, or if you wish
