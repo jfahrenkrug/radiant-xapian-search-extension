@@ -32,14 +32,4 @@ namespace :radiant do
   end
 end
 
-
-if Rake::Task.task_defined?('file_system:load:content_types')
-  namespace :file_system do
-    namespace :load do
-      task :content_types do
-        Rake::Task['ts:in'].invoke
-      end
-      task :content_types => 'radiant:extensions:sphinx_search:disable_deltas'
-    end
-  end
-end
+require File.join(File.dirname(__FILE__), %w{.. .. vendor plugins thinking-sphinx lib thinking_sphinx tasks})
