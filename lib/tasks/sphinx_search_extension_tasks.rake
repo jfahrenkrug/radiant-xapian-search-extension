@@ -32,4 +32,4 @@ namespace :radiant do
   end
 end
 
-require File.join(File.dirname(__FILE__), %w{.. .. vendor plugins thinking-sphinx lib thinking_sphinx tasks})
+#require File.join(File.dirname(__FILE__), %w{.. .. vendor plugins thinking-sphinx lib thinking_sphinx tasks})
