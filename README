@@ -4,9 +4,11 @@ Adds ThinkingSphinx [http://ts.freelancing-gods.com/] support to Radiant.
 
 == Usage
 
-After installation, you'll need to load the Thinking Sphinx submodule via:
-$ git submodule init
-$ git submodule update
+Requires the gem version of Thinking Sphinx, available at:
+http://github.com/freelancing-god/thinking-sphinx
+Once installed, add this line to environment.rb:
+
+  config.gem 'freelancing-god-thinking-sphinx', :lib => 'thinking_sphinx'
 
 By default, only the first 8kB of any page's content will be indexed. You can 
 change this in page_extensions.rb if that's not enough space, or if you wish
