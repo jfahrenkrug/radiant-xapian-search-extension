@@ -1,7 +1,7 @@
 class SphinxSearchExtension < Radiant::Extension
-  version "1.0"
+  version "0.8.0"
   description "Search Pages with ThinkingSphinx"
-  url "https://code.digitalpulp.com"
+  url "http://digitalpulp.com"
   
   def activate
     Page.send(:include, SphinxSearch::PageExtensions)
