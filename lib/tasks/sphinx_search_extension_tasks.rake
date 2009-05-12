@@ -1,3 +1,6 @@
+require 'thinking_sphinx'
+require 'thinking_sphinx/tasks'
+
 namespace :radiant do
   namespace :extensions do
     namespace :sphinx_search do
@@ -31,5 +34,3 @@ namespace :radiant do
     end
   end
 end
-
-require File.join(File.dirname(__FILE__), %w{.. .. vendor plugins thinking-sphinx lib thinking_sphinx tasks})
