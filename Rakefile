@@ -99,22 +99,15 @@ namespace :spec do
   end
 end
 
-desc 'Generate documentation for the sphinx_search extension.'
+desc 'Generate documentation for the xapian_search extension.'
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'SphinxSearchExtension'
+  rdoc.title    = 'XapianSearchExtension'
   rdoc.options << '--line-numbers' << '--inline-source'
   rdoc.rdoc_files.include('README')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
-# For extensions that are in transition
-desc 'Test the sphinx_search extension.'
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = true
-end
 
 # Load any custom rakefiles for extension
 Dir[File.dirname(__FILE__) + '/tasks/*.rake'].sort.each { |f| require f }

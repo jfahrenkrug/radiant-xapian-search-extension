@@ -1,23 +1,15 @@
-= Sphinx Search
+= Xapian Search
 
-Adds ThinkingSphinx [http://ts.freelancing-gods.com/] support to Radiant.
+Adds ActsAsXapian [http://github.com/Overbryd/acts_as_xapian/tree/master] support to Radiant.
 
 == Usage
 
-After installation, you'll need to load the Thinking Sphinx submodule via:
+After installation, you'll need to load the ActsAsXapian submodule via:
 $ git submodule init
 $ git submodule update
 
-By default, only the first 8kB of any page's content will be indexed. You can 
-change this in page_extensions.rb if that's not enough space, or if you wish
-to reduce that in order to keep your indexes lean.
-
-This extension defines a Page index for you. Pages will be indexed on title 
-and content, with a field boost applied to title. Included attributes are: 
-status_id, updated_at, and a +searchable+ boolean. You can toggle the 
-searchable attribute from within the page edit view if you wish to restrict
-certain pages from appearing in the results -- just remember to call
-Page.search with +:conditions => { :searchable => 1 }+ if that's the case.
+Based on the sphinx_search_extension by Digital Pulp.
+ActsAsXapian port by Johannes Fahrenkrug, Springenwerk [http://springenwerk.com]
 
 ==============================================================================
 
