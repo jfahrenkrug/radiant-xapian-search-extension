@@ -6,7 +6,8 @@ Adds [ActsAsXapian](http://github.com/Overbryd/acts_as_xapian/tree/master) suppo
 Installation
 ---
 
-First you need to install [Xapian](http://www.locomotivation.com/blog/2008/07/23/simple-ruby-on-rails-full-text-search-using-xapian.html)
+First you need to install [Xapian](http://www.locomotivation.com/blog/2008/07/23/simple-ruby-on-rails-full-text-search-using-xapian.html).
+Once that's done, install the extension:
 
     cd /path/to/radiant
     git clone git://github.com/jfahrenkrug/radiant-xapian-search-extension.git vendor/extensions/xapian_search
@@ -16,10 +17,11 @@ After installation, you'll need to load the ActsAsXapian submodule via:
     cd vendor/extensions/xapian_search
     git submodule init
     git submodule update
+    cd /path/to/radiant
 
 Then you'll need to run the migrations:
 
-    rake radiant:extensions:xapian_search:migrate
+    rake radiant:extensions:xapian_search:migrate RAILS_ENV=development
 
 And finally you'll have to create the index:
 
@@ -37,7 +39,7 @@ or
 
     rake xapian:rebuild_index models="Page" RAILS_ENV=development
 
-regularly to keep the index up to date.
+regularly to keep the index up to date. Setting up a cron job might be a good idea.
 For more info, check the [ActsAsXapian README](http://github.com/Overbryd/acts_as_xapian/tree/master) or [this post](http://www.locomotivation.com/blog/2008/07/23/simple-ruby-on-rails-full-text-search-using-xapian.html)
 
 Based on the sphinx_search_extension by Digital Pulp.
