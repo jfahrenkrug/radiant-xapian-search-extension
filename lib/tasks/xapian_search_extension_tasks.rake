@@ -22,10 +22,18 @@ namespace :radiant do
           FileUtils.mkdir_p RAILS_ROOT + directory
           FileUtils.cp file, RAILS_ROOT + path
         end
+        
+        source = File.join(XapianSearchExtension.root, '/vendor/plugins/xapit/rails_generators/xapit/templates/setup_xapit.rb')
+        destination = "#{Rails.root}/config/initializers/setup_xapit.rb"
+        unless File.exist? destination
+          puts "Adding config/initializers/setup_xapit.rb"
+          FileUtils.mkdir_p "#{Rails.root}/config/initializers"
+          FileUtils.cp(source, destination)
+        end
       end
     end
   end
 end
 
-# Load any rakefiles of acts_as_xapian
-Dir[File.join(File.dirname(__FILE__), %w{.. .. vendor plugins acts_as_xapian tasks *.rake})].sort.each { |f| import f }
+# Load any rakefiles of xapit
+Dir[File.join(File.dirname(__FILE__), %w{.. .. vendor plugins xapit tasks *.rake})].sort.each { |f| import f }

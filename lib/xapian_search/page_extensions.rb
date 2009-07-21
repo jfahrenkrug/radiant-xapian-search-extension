@@ -2,7 +2,13 @@ module XapianSearch
   module PageExtensions
    
    def self.included(base)
-     base.acts_as_xapian :texts => [ :title, :xapian_parts_content ], :values => [ [ :updated_at, 0, "updated_at", :date ] ], :if => :searchable
+     #base.acts_as_xapian :texts => [ :title, :xapian_parts_content ], :values => [ [ :updated_at, 0, "updated_at", :date ] ], :if => :searchable
+     
+     base.xapit do |index|
+           index.text :title, :xapian_parts_content
+     end
+     
+     
      #base.define_index do
     #   set_property :delta => true, :group_concat_max_len => 8.kilobytes
     #   set_property :field_weights => { 'title' => 100 }

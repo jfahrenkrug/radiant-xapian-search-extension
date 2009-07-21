@@ -5,7 +5,7 @@ class AddXapianColumnsToPages < ActiveRecord::Migration
   end
 
   def self.down
-    remove_index  :pages, :searchable
-    remove_column :pages, :searchable
+    #remove_index  :pages, :searchable
+    #remove_column :pages, :searchable
   end
 end
