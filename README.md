@@ -10,11 +10,13 @@ First, you'll need to [install Xapian](http://wiki.github.com/Overbryd/acts_as_x
 
 Next - from the root of your Radiant app - install the Xapit Plugin:
 
-    script/plugin install git://github.com/ryanb/xapit.git
+    git submodule add git://github.com/ryanb/xapit.git vendor/plugins/xapit
+    mkdir config/initializers
+    cp vendor/plugins/xapit/rails_generators/xapit/templates/setup_xapit.rb config/initializers
   
 Finally, install the extension:
 
-    script/extension install git://github.com/jfahrenkrug/xapian_search.git
+    git submodule add git://github.com/jfahrenkrug/radiant-xapian-search-extension.git vendor/extensions/xapian_search
     
 And run the migration:
 
