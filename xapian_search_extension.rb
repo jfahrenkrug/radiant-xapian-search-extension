@@ -1,6 +1,6 @@
 class XapianSearchExtension < Radiant::Extension
   version "1.0"
-  description "Search Pages with ActsAsXapian"
+  description "Search Pages with Xapian/Xapit"
   url "http://springenwerk.com"
   
   def activate
