@@ -11,9 +11,8 @@ unless defined? RADIANT_ROOT
 end
 require "#{RADIANT_ROOT}/spec/spec_helper"
 
-if File.directory?(File.dirname(__FILE__) + "/scenarios")
-  Scenario.load_paths.unshift File.dirname(__FILE__) + "/scenarios"
-end
+Dataset::Resolver.default << (File.dirname(__FILE__) + "/datasets")
+
 if File.directory?(File.dirname(__FILE__) + "/matchers")
   Dir[File.dirname(__FILE__) + "/matchers/*.rb"].each {|file| require file }
 end
@@ -30,7 +29,7 @@ Spec::Runner.configure do |config|
   # Alternatively, if you prefer to declare them only once, you can
   # do so here, like so ...
   #
-  #   config.global_fixtures = :table_a, :table_b
+  # config.global_fixtures = :table_a, :table_b
   #
   # If you declare global fixtures, be aware that they will be declared
   # for all of your examples, even those that don't use them.

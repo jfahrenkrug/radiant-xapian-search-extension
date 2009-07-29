@@ -2,7 +2,7 @@ module XapianSearch
   module PageExtensions
    
    def self.included(base)     
-     base.xapit(:conditions => { :searchable => true }) do |index|
+     base.xapit(:conditions => { :searchable => true, :status_id => 100 }) do |index|
            index.text :title, :weight => 10
            index.text :xapian_parts_content
      end
