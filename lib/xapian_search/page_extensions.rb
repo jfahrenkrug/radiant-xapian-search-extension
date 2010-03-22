@@ -33,8 +33,6 @@ module XapianSearch
      return ''
    end
    
-   private
-   
    def site_of_current_page
      if respond_to?(:site)
        current_page = self
